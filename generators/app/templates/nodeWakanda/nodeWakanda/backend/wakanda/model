@@ -1,0 +1,38 @@
+//process.on('uncaughtExcepetion',function(err){
+//	console.log(err);
+//});
+let devis = requireNode("../devis");
+
+devis.add({
+    role: "model",
+    action: "GET"
+}, (args, done) => {
+
+    let searchData = getDataFromJson(args.data);
+    done(null, ds.args.dataClass.find(searchData));
+});
+
+function GET(args, done) {
+    let finalDone;
+    if (args.data) {
+        if (args.func == "find") {
+            let searchData = getDataFromJson(args.data);
+            finalDone = ds.args.dataClass.args.func(searchData);
+        }
+    }
+    else
+}
+
+
+function getDataFromJson(data) {
+    let res = "";
+    let i = 0;
+    for (var k in data) {
+        if (i != 0) res += "&&";
+        i++;
+        res += k + "=" + data[k];
+
+    }
+    return res;
+}
+console.log("test");
