@@ -99,14 +99,14 @@ devis.add({
   cmd:'play'
 }, function(args, done) {
 
-  done(null, { result: 'play' });
+  done({ result: 'play' });
 });
 devis.add({
   action: 'game',
   cmd:'pause'
 }, function(args, done) {
 
-  done(null, { result: 'pause' });
+  done( { result: 'pause' });
 });
 devis.listen({
   host:'127.0.0.1',
