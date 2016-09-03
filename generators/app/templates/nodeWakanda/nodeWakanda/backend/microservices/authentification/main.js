@@ -11,7 +11,7 @@ auth.add({
 }, Logout);
 
 auth.add({
-    role: "auth",
+    role:  "auth",
     action: "currentUser"
 }, CurrentUser);
 
@@ -21,18 +21,18 @@ auth.add({
 }, CurrentUserBelongsTo);
 
 function Login(args, done) {
-    done(null, loginByPassword(args.login, args.password));
+    done(loginByPassword(args.login, args.password));
 }
 
 function Logout(args, done) {
-    done(null, logout());
+    done(logout());
 }
 
 function CurrentUser(args, done) {
-    done(null, directory.currentUser);
+    done(directory.currentUser);
 }
 
 function CurrentUserBelongsTo(args, done) {
-    done(null, directory.currentUserBelongsTo(args.group));
+    done(directory.currentUserBelongsTo(args.group));
 }
 module.exports=auth;

@@ -8,7 +8,7 @@ model.add({
     for (var attribute in args)
         options[attribute] = args[attribute];
 
-    done(null, "initialization complete");
+    done("initialization complete");
 });
 
 model.add({
@@ -40,7 +40,7 @@ function DELETE(args, done) {
         EntityToRemove.remove();
         fin=true;
     }
-    done(null, fin);
+    done(fin);
 }
 
 function PUT(args, done) {
@@ -60,7 +60,7 @@ function PUT(args, done) {
             fin = e;
         }
     }
-    done(null, fin);
+    done(fin);
 }
 
 function POST(args, done) {
@@ -81,7 +81,7 @@ function POST(args, done) {
         catch (e) {
             fin = e;
         }
-        done(null, fin);
+        done(fin);
     }
 }
 
@@ -102,7 +102,7 @@ function GET(args, done) {
     }
     else
         fin = ds[dataClass][func]();
-    done(null, fin);
+    done(fin);
 }
 
 function getDataFromJson(data) {
