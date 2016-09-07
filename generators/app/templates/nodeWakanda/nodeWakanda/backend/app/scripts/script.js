@@ -22,7 +22,7 @@ function getDirectories(srcpath) {
             }
             this.req += ")};";
         }
-        this.req += "\ndevis.listen({host:'127.0.0.1',port:3030});";
+        this.req += "\ndevis.listen({path:'\\\\\.\\pipe\\mynamedpipe'});";
         fs.writeFile("app/root.js", req, function(err) {
             if (err) {
                 return console.log(err);
